@@ -29,6 +29,8 @@ class CreateUsersTable extends Migration
             $table->enum('status',['Active','Disabled'])->default('Active');
 
             $table->string('handle');
+            $table->string('password');
+
             $table->enum('userable',['Employee','Contractor','Supplier','Agent'])->default('Employee');
             $table->unsignedMediumInteger('userable_id');
 

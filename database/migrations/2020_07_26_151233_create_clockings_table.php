@@ -26,7 +26,7 @@ class CreateClockingsTable extends Migration
         Schema::create('clockings', function (Blueprint $table) {
             $table->id();
             $table->unsignedSmallInteger('timesheet_id');
-            $table->type('enum', 'In','Out');
+            $table->enum('type',[ 'In','Out']);
             $table->dateTimeTz('clocked_at', 0);
             $table->json('data')->default(new Expression('(JSON_ARRAY())'));
             $table->timestamps();
