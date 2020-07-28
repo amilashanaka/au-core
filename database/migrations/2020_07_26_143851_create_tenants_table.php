@@ -28,7 +28,6 @@ class CreateTenantsTable extends Migration
             $table->json('settings')->default(new Expression('(JSON_ARRAY())'));
             $table->json('data')->default(new Expression('(JSON_ARRAY())'));
             $table->timestamps();
-            $table->unsignedSmallInteger('legacy_id');
 
         });
     }
