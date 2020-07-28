@@ -1,7 +1,7 @@
 <?php
 /*
 Author: Raul Perusquia (raul@inikoo.com)
-Created:  Mon Jul 27 2020 16:24:18 GMT+0800 (Malaysia Time) Kuala Lumpur, Malaysia 
+Created:  Mon Jul 27 2020 16:24:18 GMT+0800 (Malaysia Time) Kuala Lumpur, Malaysia
 Copyright (c) 2020, Raúl Alejandro Perusquía Flores
 
 Version 4
@@ -19,6 +19,10 @@ class User extends Authenticatable implements JWTSubject
 {
     use Notifiable;
 
+    protected $casts = [
+        'settings' => 'array',
+        'data'     => 'array'
+    ];
 
     /**
      * Get the identifier that will be stored in the subject claim of the JWT.

@@ -31,8 +31,7 @@ class AuthController extends Controller
     public function login()
     {
         $credentials = request(['tenant_id','handle', 'password']);
-        data_set($credentials,'status','Active');
-        dd($credentials);
+
 
         if (! $token = auth()->attempt($credentials)) {
             return response()->json(['error' => 'Unauthorized'], 401);
